@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 50rem;
+  height: 25rem;
+  background-color: #dddddd;
+  border: 2px dashed black;
+  margin: 2rem auto;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.container:hover {
+  border: 2px solid green;
+  cursor: pointer;
+}
+
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: green;
+  top: 0;
+  transition: all 0.5s ease;
+}
+
+.container::before {
+  left: -50%;
+}
+
+.container:hover.container::before {
+  left: 0;
+}
+
+.container::after {
+  right: -50%;
+}
+
+.container:hover.container::after {
+  right: 0;
+}
+
+.flag__circle::before {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 60%;
+  border-radius: 50%;
+  background-color: red;
+  top: 20%;
+  left: 35%;
+  transform: scale(0);
+  transition: all 0.5s;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.flag__circle::after {
+  content: "I \f21e  Bangladesh";
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 33px;
+  color: #ffffff;
+  left: 0;
+  right: 0;
+  top: 45%;
+  transform: scale(0);
+  transition: all 0.5s;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.container:hover .flag__circle::before,
+.container:hover .flag__circle::after {
+  transform: scale(1);
+  visibility: visible;
+}
+
+.flag__content h1 {
+  margin: 55px 0 15px 0;
+  text-transform: capitalize;
+}
+.flag__content img {
+  width: 25%;
+}
+.container:hover .flag__content {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  margin: 5rem 0 0 0;
+}
+
+footer span {
+  color: red;
+  font-size: 30px;
+}
+
+footer a {
+  text-decoration: none;
+  color: blueviolet;
+}
